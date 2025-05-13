@@ -110,6 +110,16 @@ public class Game {
             state = GameState.GAME_OVER;
         }
     }
+
+    // TESTING STUFF (Without Reflection)
+
+    void setStateForTesting(GameState state) {
+        this.state = state;
+    }
+
+    void setDeckForTesting(Deck deck) {
+        this.deck = deck;
+    }
 }
 
 

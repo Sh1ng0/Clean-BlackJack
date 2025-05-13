@@ -45,3 +45,8 @@ Practice project for security and testing
 - [ ] Finish `game-core` MVP (1v1 gameplay)
 - [ ] Basic APISIX routing
 - [ ] Dockerize all services
+
+## **Testing guidelines**
+- [ ] No reflection in the form of the "Field" class
+- [ ] We use package private testing (Classes will be modified and comentated accordingly)
+
