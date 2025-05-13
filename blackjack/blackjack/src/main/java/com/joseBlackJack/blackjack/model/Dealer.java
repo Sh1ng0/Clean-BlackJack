@@ -1,6 +1,6 @@
 package com.joseBlackJack.blackjack.model;
 
-public class Dealer extends AbstractPlayer{
+public class Dealer extends AbstractPlayer {
 
 
 }
