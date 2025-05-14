@@ -31,25 +31,23 @@ public abstract class AbstractPlayer {
             }
         }
 
-        // Ajustar valor de ases (1 u 11)
         while (value > 21 && aceCount > 0) {
-            value -= 10;  // Contar un as como 1 en vez de 11
+            value -= 10;
             aceCount--;
         }
 
         return value;
     }
 
+
     public boolean isBust() {
         return calculateHandValue() > 21;
     }
 
+
     public boolean hasBlackjack() {
         return hand.size() == 2 && calculateHandValue() == 21;
     }
-
-
-
 
 
 }

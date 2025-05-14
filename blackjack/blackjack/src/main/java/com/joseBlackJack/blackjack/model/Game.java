@@ -22,7 +22,7 @@ public class Game {
 
     @Getter private Player player;
     @Getter private Dealer dealer;
-    private Deck deck;
+    @Getter private Deck deck;
     @Getter private GameState state;
     @Getter private GameResult result;
 
@@ -43,16 +43,17 @@ public class Game {
         if (state == GameState.WAITING_TO_START) {
             deck.initializeDeck();
             deck.shuffle();
-            // Repartir 2 cartas al jugador y al dealer
+
             deck.dealCards(player, 2);
             deck.dealCards(dealer, 2);
+
             state = GameState.PLAYER_TURN;
         }
     }
 
 
-    private void playDealerHand() {
-        while (dealer.calculateHandValue() < 17) {  // Regla: dealer pide hasta 16
+    public void playDealerHand() {
+        while (dealer.calculateHandValue() < 17) {
             dealer.receiveCard(deck.dealCard());
         }
     }
@@ -111,7 +112,7 @@ public class Game {
         }
     }
 
-    // TESTING STUFF (Without Reflection)
+    // TESTING STUFF (Hidden package)
 
     void setStateForTesting(GameState state) {
         this.state = state;
@@ -119,6 +120,14 @@ public class Game {
 
     void setDeckForTesting(Deck deck) {
         this.deck = deck;
+    }
+
+    void setPlayerForTesting(Player player) {
+        this.player = player;
+    }
+
+    void setDealerForTesting(Dealer dealer) {
+        this.dealer = dealer;
     }
 }
 

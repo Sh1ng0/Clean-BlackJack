@@ -13,10 +13,8 @@ public class Deck {
         deckList = new ArrayList<>();
     }
 
-    /**
-     * Inicializa la baraja con las 52 cartas estándar.
-     * Debe llamarse antes de usar la baraja.
-     */
+
+
     public void initializeDeck() {
         deckList.clear();
         for (Card.Suit suit : Card.Suit.values()) {
@@ -35,7 +33,7 @@ public class Deck {
         return deckList.remove(0);
     }
 
-    // Ver si resulta util en el futuro (Clase "Game" y clase de servicio)
+
     public void dealCards(AbstractPlayer player, int numberOfCards) {
         for (int i = 0; i < numberOfCards; i++) {
             player.receiveCard(this.dealCard());
