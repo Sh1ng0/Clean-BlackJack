@@ -1,6 +1,8 @@
 package com.joseBlackJack.blackjack.model;
 
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,7 @@ public abstract class AbstractPlayer {
     public void clearHand() {
         hand.clear();
     }
+
 
     public List<Card> getHand() {
         return hand;
